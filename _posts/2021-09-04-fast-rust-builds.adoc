@@ -347,7 +347,7 @@ fn main() {
 }
 ----
 
-In this case, we only ever instantiate `frobincate` with `String`, but it will get compiled twice, because monomorphization happens _per crate_.
+In this case, we only ever instantiate `frobnicate` with `String`, but it will get compiled twice, because monomorphization happens _per crate_.
 `B` and `C` are compiled separately, and each includes machine code for `do_*` functions, so they need `frobnicate<String>`.
 If optimizations are disabled, rustc can share template instantiations with dependencies, but that doesn't work for sibling dependencies.
 With optimizations, rustc doesn't share monomorphizations even with direct dependencies.
